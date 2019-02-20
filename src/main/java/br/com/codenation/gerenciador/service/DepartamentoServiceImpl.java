@@ -1,13 +1,12 @@
 package br.com.codenation.gerenciador.service;
 
-import java.util.List;
-
+import br.com.codenation.gerenciador.dao.DepartamentoDao;
+import br.com.codenation.gerenciador.domain.Departamento;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.codenation.gerenciador.dao.DepartamentoDao;
-import br.com.codenation.gerenciador.domain.Departamento;
+import java.util.List;
 
 @Service
 public class DepartamentoServiceImpl implements DepartamentoService {
@@ -36,23 +35,18 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 	@Transactional(readOnly = true)
 	@Override
 	public Departamento buscarPorId(Long id) {
-		
 		return dao.findById(id);
 	}
 
 	@Transactional(readOnly = true)
 	@Override
 	public List<Departamento> buscarTodos() {
-		
 		return dao.findAll();
 	}
 
 	@Override
 	public boolean departamentoTemCargos(Long id) {
-		if (buscarPorId(id).getCargos().isEmpty()) {
-			return false;
-		}
-		return true;
+		return !buscarPorId(id).getCargos().isEmpty();
 	}
 
 }
