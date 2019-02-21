@@ -1,15 +1,32 @@
 package br.com.codenation.gerenciador.models;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.UUID;
 
 public class Endereco extends AbstractEntity {
 
 	private String logradouro;
+
+	@NotBlank
+	@Size(min = 3, max = 100)
 	private String bairro;
+
+	@NotBlank
+	@Size(min = 3, max = 100)
 	private String cidade;
+
+	@NotNull(message = "{NotNull.endereco.uf}")
 	private UF uf;
+
+	@NotBlank
+	@Size(min = 9, max = 9, message = "{Size.endereco.cep}")
 	private String cep;
+
 	private Integer numero;
+
+	@Size(max = 100)
 	private String complemento;
 
 	public Endereco() {
