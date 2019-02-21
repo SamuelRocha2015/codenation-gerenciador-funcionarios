@@ -1,9 +1,9 @@
 package br.com.codenation.gerenciador.web.controller.api;
 
+import br.com.codenation.gerenciador.domain.Cargo;
+import br.com.codenation.gerenciador.domain.Departamento;
+import br.com.codenation.gerenciador.domain.Funcionario;
 import br.com.codenation.gerenciador.domain.Usuario;
-import br.com.codenation.gerenciador.domain.mongo.Cargo;
-import br.com.codenation.gerenciador.domain.mongo.Departamento;
-import br.com.codenation.gerenciador.domain.mongo.Funcionario;
 import br.com.codenation.gerenciador.repositories.DepartamentoRepository;
 import br.com.codenation.gerenciador.repositories.FuncionarioRepository;
 import br.com.codenation.gerenciador.repositories.UsuarioRepository;

@@ -1,8 +1,8 @@
 package br.com.codenation.gerenciador.web.controller;
 
+import br.com.codenation.gerenciador.domain.Cargo;
+import br.com.codenation.gerenciador.domain.Funcionario;
 import br.com.codenation.gerenciador.domain.UF;
-import br.com.codenation.gerenciador.domain.mongo.Cargo;
-import br.com.codenation.gerenciador.domain.mongo.Funcionario;
 import br.com.codenation.gerenciador.service.CargoService;
 import br.com.codenation.gerenciador.service.FuncionarioService;
 import br.com.codenation.gerenciador.web.validator.FuncionarioValidator;

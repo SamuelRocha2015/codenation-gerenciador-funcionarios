@@ -1,6 +1,6 @@
 package br.com.codenation.gerenciador.service;
 
-import br.com.codenation.gerenciador.domain.mongo.Cargo;
+import br.com.codenation.gerenciador.domain.Cargo;
 
 import java.util.List;
 

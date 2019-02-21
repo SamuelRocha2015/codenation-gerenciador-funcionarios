@@ -1,6 +1,6 @@
 package br.com.codenation.gerenciador.repositories;
 
-import br.com.codenation.gerenciador.domain.mongo.Funcionario;
+import br.com.codenation.gerenciador.domain.Funcionario;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.time.LocalDate;

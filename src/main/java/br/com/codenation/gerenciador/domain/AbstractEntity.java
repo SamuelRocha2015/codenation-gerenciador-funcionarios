@@ -1,14 +1,11 @@
 package br.com.codenation.gerenciador.domain;
 
+import org.springframework.data.annotation.Id;
+
 import java.io.Serializable;
 
-import javax.persistence.*;
-
-@SuppressWarnings("serial")
-@MappedSuperclass
 public abstract class AbstractEntity<ID extends Serializable> implements Serializable {
-
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
 	private ID id;
 
 	public ID getId() {

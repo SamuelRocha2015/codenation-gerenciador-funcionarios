@@ -1,6 +1,6 @@
 package br.com.codenation.gerenciador.web.validator;
 
-import br.com.codenation.gerenciador.domain.mongo.Funcionario;
+import br.com.codenation.gerenciador.domain.Funcionario;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 

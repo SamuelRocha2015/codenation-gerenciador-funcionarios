@@ -1,6 +1,6 @@
 package br.com.codenation.gerenciador.service;
 
-import br.com.codenation.gerenciador.domain.mongo.Departamento;
+import br.com.codenation.gerenciador.domain.Departamento;
 import br.com.codenation.gerenciador.repositories.DepartamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

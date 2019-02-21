@@ -1,6 +1,6 @@
 package br.com.codenation.gerenciador.service;
 
-import br.com.codenation.gerenciador.domain.mongo.Funcionario;
+import br.com.codenation.gerenciador.domain.Funcionario;
 
 import java.time.LocalDate;
 import java.util.List;
