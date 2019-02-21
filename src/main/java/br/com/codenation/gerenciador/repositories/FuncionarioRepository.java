@@ -9,8 +9,8 @@ import java.util.List;
 public interface FuncionarioRepository extends MongoRepository<Funcionario, String> {
     List<Funcionario> findByNome(String nome);
     List<Funcionario> findByCargoId(String id);
-    List<Funcionario> findByDataEntradaAndDataSaida(LocalDate entrada, LocalDate saida);
-    List<Funcionario> findByDataEntrada(LocalDate entrada);
-    List<Funcionario> findByDataSaida(LocalDate saida);
+    List<Funcionario> findByDataEntradaAndDataSaida(LocalDate dataEntrada, LocalDate dataSaida);
+    List<Funcionario> findByDataEntrada(LocalDate dataEntrada);
+    List<Funcionario> findByDataSaida(LocalDate dataSaida);
 
 }
