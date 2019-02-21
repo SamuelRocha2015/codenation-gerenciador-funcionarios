@@ -1,16 +1,21 @@
 package br.com.codenation.gerenciador.models;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Document(collection = "gerenciador-funcionario")
-public class Funcionario extends AbstractEntity<String> {
+public class Funcionario extends AbstractEntity {
 
 	private String nome;
+	@NumberFormat(style = NumberFormat.Style.CURRENCY, pattern = "#,##0.00")
 	private BigDecimal salario;
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate dataEntrada;
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate dataSaida;
 	private Endereco endereco;
 	private Cargo cargo;
