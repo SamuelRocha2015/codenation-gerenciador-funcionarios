@@ -1,22 +1,22 @@
 package br.com.codenation.gerenciador.service;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
+import br.com.codenation.gerenciador.domain.mongo.Funcionario;
+import br.com.codenation.gerenciador.repositories.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.codenation.gerenciador.dao.FuncionarioDao;
-import br.com.codenation.gerenciador.domain.Funcionario;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
 public class FuncionarioServiceImpl implements FuncionarioService {
 	
 	@Autowired
-	private FuncionarioDao dao;
+	private FuncionarioRepository dao;
 
 	@Transactional(readOnly = false)
 	@Override
@@ -27,18 +27,19 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 	@Transactional(readOnly = false)
 	@Override
 	public void editar(Funcionario funcionario) {
-		dao.update(funcionario);
+		dao.save(funcionario);
 	}
 
 	@Transactional(readOnly = false)
 	@Override
-	public void excluir(Long id) {
-		dao.delete(id);
+	public void excluir(String id) {
+		dao.deleteById (id);
 	}
 
 	@Override
-	public Funcionario buscarPorId(Long id) {
-		return dao.findById(id);
+	public Funcionario buscarPorId(String id) {
+		Optional<Funcionario> func = dao.findById(id);
+		return func.get();
 	}
 
 	@Override
@@ -52,14 +53,14 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 	}
 
 	@Override
-	public List<Funcionario> buscarPorCargo(Long id) {
+	public List<Funcionario> buscarPorCargo(String id) {
 		return dao.findByCargoId(id);
 	}
 
 	@Override
     public List<Funcionario> buscarPorDatas(LocalDate entrada, LocalDate saida) {
 	    if (entrada != null && saida != null) {	    	
-            return dao.findByDataEntradaDataSaida(entrada, saida);
+            return dao.findByDataEntradaAndDataSaida(entrada, saida);
         } else if (entrada != null) {        	
 	        return dao.findByDataEntrada(entrada);
         } else if (saida != null) {        	

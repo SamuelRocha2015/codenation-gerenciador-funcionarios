@@ -1,10 +1,10 @@
 package br.com.codenation.gerenciador.web.validator;
 
-import java.time.LocalDate;
-
-import br.com.codenation.gerenciador.domain.Funcionario;
+import br.com.codenation.gerenciador.domain.mongo.Funcionario;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
+
+import java.time.LocalDate;
 
 public class FuncionarioValidator implements Validator {
 

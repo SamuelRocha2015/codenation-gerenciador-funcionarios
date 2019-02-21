@@ -1,8 +1,8 @@
 package br.com.codenation.gerenciador.web.controller;
 
-import br.com.codenation.gerenciador.domain.Funcionario;
 import br.com.codenation.gerenciador.domain.UF;
 import br.com.codenation.gerenciador.domain.mongo.Cargo;
+import br.com.codenation.gerenciador.domain.mongo.Funcionario;
 import br.com.codenation.gerenciador.service.CargoService;
 import br.com.codenation.gerenciador.service.FuncionarioService;
 import br.com.codenation.gerenciador.web.validator.FuncionarioValidator;
@@ -57,7 +57,7 @@ public class FuncionarioController {
 	}
 	
 	@GetMapping("/editar/{id}")
-	public String preEditar(@PathVariable("id") Long id, ModelMap model) {
+	public String preEditar(@PathVariable("id") String id, ModelMap model) {
 		model.addAttribute("funcionario", funcionarioService.buscarPorId(id));
 		return "funcionario/cadastro";
 	}
@@ -75,7 +75,7 @@ public class FuncionarioController {
 	}	
 	
 	@GetMapping("/excluir/{id}")
-	public String excluir(@PathVariable("id") Long id, RedirectAttributes attr) {
+	public String excluir(@PathVariable("id") String id, RedirectAttributes attr) {
 		funcionarioService.excluir(id);
 		attr.addFlashAttribute("success", "Funcionário removido com sucesso.");
 		return "redirect:/funcionarios/listar";
@@ -88,7 +88,7 @@ public class FuncionarioController {
 	}
 	
 	@GetMapping("/buscar/cargo")
-	public String getPorCargo(@RequestParam("id") Long id, ModelMap model) {
+	public String getPorCargo(@RequestParam("id") String id, ModelMap model) {
 		model.addAttribute("funcionarios", funcionarioService.buscarPorCargo(id));
 		return "funcionario/lista";
 	}		

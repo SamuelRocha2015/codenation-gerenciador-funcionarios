@@ -1,9 +1,9 @@
 package br.com.codenation.gerenciador.service;
 
+import br.com.codenation.gerenciador.domain.mongo.Funcionario;
+
 import java.time.LocalDate;
 import java.util.List;
-
-import br.com.codenation.gerenciador.domain.Funcionario;
 
 public interface FuncionarioService {
 
@@ -11,15 +11,15 @@ public interface FuncionarioService {
 
     void editar(Funcionario funcionario);
 
-    void excluir(Long id);
+    void excluir(String id);
 
-    Funcionario buscarPorId(Long id);
+    Funcionario buscarPorId(String id);
 
     List<Funcionario> buscarTodos();
 
 	List<Funcionario> buscarPorNome(String nome);
 
-	List<Funcionario> buscarPorCargo(Long id);
+	List<Funcionario> buscarPorCargo(String id);
 	
 	List<Funcionario> buscarPorDatas(LocalDate entrada, LocalDate saida);
 }
