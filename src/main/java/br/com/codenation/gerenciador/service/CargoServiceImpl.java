@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service @Transactional(readOnly = false)
 public class CargoServiceImpl implements CargoService {
@@ -17,6 +18,7 @@ public class CargoServiceImpl implements CargoService {
 
 	@Override
 	public void salvar(Cargo cargo) {
+		cargo.setId(UUID.randomUUID().toString());
 		repository.save(cargo);
 	}
 

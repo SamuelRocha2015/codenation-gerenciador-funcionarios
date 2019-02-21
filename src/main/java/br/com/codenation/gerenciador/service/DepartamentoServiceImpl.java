@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class DepartamentoServiceImpl implements DepartamentoService {
@@ -18,6 +19,7 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 	@Transactional(readOnly = false)
 	@Override
 	public void salvar(Departamento departamento) {
+		departamento.setId(UUID.randomUUID().toString());
 		dao.save(departamento);		
 	}
 

@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @Transactional(readOnly = true)
@@ -21,6 +22,7 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 	@Transactional(readOnly = false)
 	@Override
 	public void salvar(Funcionario funcionario) {
+		funcionario.setId(UUID.randomUUID().toString());
 		dao.save(funcionario);
 	}
 
