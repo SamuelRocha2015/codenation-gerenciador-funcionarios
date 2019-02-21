@@ -1,6 +1,6 @@
 package br.com.codenation.gerenciador.web.controller;
 
-import br.com.codenation.gerenciador.domain.Departamento;
+import br.com.codenation.gerenciador.models.Departamento;
 import br.com.codenation.gerenciador.service.DepartamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

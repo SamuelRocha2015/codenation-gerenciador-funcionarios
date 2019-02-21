@@ -1,6 +1,6 @@
 package br.com.codenation.gerenciador.web.conversor;
 
-import br.com.codenation.gerenciador.domain.Cargo;
+import br.com.codenation.gerenciador.models.Cargo;
 import br.com.codenation.gerenciador.service.CargoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;

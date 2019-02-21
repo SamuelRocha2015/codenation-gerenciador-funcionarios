@@ -1,6 +1,6 @@
 package br.com.codenation.gerenciador.service;
 
-import br.com.codenation.gerenciador.domain.Departamento;
+import br.com.codenation.gerenciador.models.Departamento;
 
 import java.util.List;
 

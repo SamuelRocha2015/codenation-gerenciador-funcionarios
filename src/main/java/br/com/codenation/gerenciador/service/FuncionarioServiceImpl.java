@@ -1,6 +1,6 @@
 package br.com.codenation.gerenciador.service;
 
-import br.com.codenation.gerenciador.domain.Funcionario;
+import br.com.codenation.gerenciador.models.Funcionario;
 import br.com.codenation.gerenciador.repositories.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

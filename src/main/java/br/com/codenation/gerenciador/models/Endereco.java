@@ -1,4 +1,4 @@
-package br.com.codenation.gerenciador.domain;
+package br.com.codenation.gerenciador.models;
 
 public class Endereco extends AbstractEntity<String> {
 
