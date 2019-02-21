@@ -5,6 +5,7 @@ import br.com.codenation.gerenciador.repositories.DepartamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 import java.util.Optional;
@@ -50,7 +51,7 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 
 	@Override
 	public boolean departamentoTemCargos(String id) {
-		return !buscarPorId(id).getCargos().isEmpty();
+		return !CollectionUtils.isEmpty(buscarPorId(id).getCargos());
 	}
 
 }

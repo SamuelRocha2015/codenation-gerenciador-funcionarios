@@ -5,6 +5,7 @@ import br.com.codenation.gerenciador.repositories.CargoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 import java.util.Optional;
@@ -45,6 +46,6 @@ public class CargoServiceImpl implements CargoService {
 
 	@Override
 	public boolean cargoTemFuncionarios(String id) {
-		return !buscarPorId(id).getFuncionarios().isEmpty();
+		return ! CollectionUtils.isEmpty(buscarPorId(id).getFuncionarios());
 	}
 }
