@@ -1,6 +1,8 @@
 package br.com.codenation.gerenciador.models;
 
-public class Endereco extends AbstractEntity<String> {
+import java.util.UUID;
+
+public class Endereco extends AbstractEntity {
 
 	private String logradouro;
 	private String bairro;
@@ -9,6 +11,11 @@ public class Endereco extends AbstractEntity<String> {
 	private String cep;
 	private Integer numero;
 	private String complemento;
+
+	public Endereco() {
+		super();
+		setId(UUID.randomUUID().toString());
+	}
 
 	public String getLogradouro() {
 		return logradouro;

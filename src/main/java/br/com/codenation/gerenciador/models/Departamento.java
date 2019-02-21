@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.List;
 
 @Document(collection = "gerenciador-departamento")
-public class Departamento extends AbstractEntity<String> {
+public class Departamento extends AbstractEntity {
 
 	private String nome;
 	private List<Cargo> cargos;

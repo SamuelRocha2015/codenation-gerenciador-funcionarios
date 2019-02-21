@@ -4,15 +4,16 @@ import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
 
-public abstract class AbstractEntity<ID extends Serializable> implements Serializable {
-	@Id
-	private ID id;
+public abstract class AbstractEntity implements Serializable {
 
-	public ID getId() {
+	@Id
+	private String id;
+
+	public String getId() {
 		return id;
 	}
 
-	public void setId(ID id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -32,7 +33,7 @@ public abstract class AbstractEntity<ID extends Serializable> implements Seriali
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		AbstractEntity<?> other = (AbstractEntity<?>) obj;
+		AbstractEntity other = (AbstractEntity) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
