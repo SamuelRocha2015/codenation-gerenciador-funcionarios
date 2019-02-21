@@ -1,8 +1,8 @@
 package br.com.codenation.gerenciador.service;
 
-import java.util.List;
+import br.com.codenation.gerenciador.domain.mongo.Departamento;
 
-import br.com.codenation.gerenciador.domain.Departamento;
+import java.util.List;
 
 public interface DepartamentoService {
 
@@ -10,11 +10,11 @@ public interface DepartamentoService {
 
     void editar(Departamento departamento);
 
-    void excluir(Long id);
+    void excluir(String id);
 
-    Departamento buscarPorId(Long id);
+    Departamento buscarPorId(String id);
     
     List<Departamento> buscarTodos();
 
-	boolean departamentoTemCargos(Long id);
+	boolean departamentoTemCargos(String id);
 }

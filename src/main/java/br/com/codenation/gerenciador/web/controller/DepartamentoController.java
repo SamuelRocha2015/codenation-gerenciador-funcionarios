@@ -1,8 +1,6 @@
 package br.com.codenation.gerenciador.web.controller;
 
-import javax.validation.Valid;
-
-import br.com.codenation.gerenciador.domain.Departamento;
+import br.com.codenation.gerenciador.domain.mongo.Departamento;
 import br.com.codenation.gerenciador.service.DepartamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/departamentos")
@@ -45,7 +45,7 @@ public class DepartamentoController {
 	}
 	
 	@GetMapping("/editar/{id}")
-	public String preEditar(@PathVariable("id") Long id, ModelMap model) {
+	public String preEditar(@PathVariable("id") String id, ModelMap model) {
 		model.addAttribute("departamento", service.buscarPorId(id));
 		return "departamento/cadastro";
 	}
@@ -63,7 +63,7 @@ public class DepartamentoController {
 	}
 	
 	@GetMapping("/excluir/{id}")
-	public String excluir(@PathVariable("id") Long id, ModelMap model) {
+	public String excluir(@PathVariable("id") String id, ModelMap model) {
 		
 		if (service.departamentoTemCargos(id)) {
 			model.addAttribute("fail", "Departamento não removido. Possui cargo(s) vinculado(s).");

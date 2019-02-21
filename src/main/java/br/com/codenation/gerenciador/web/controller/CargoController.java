@@ -1,7 +1,7 @@
 package br.com.codenation.gerenciador.web.controller;
 
-import br.com.codenation.gerenciador.domain.Departamento;
 import br.com.codenation.gerenciador.domain.mongo.Cargo;
+import br.com.codenation.gerenciador.domain.mongo.Departamento;
 import br.com.codenation.gerenciador.service.CargoService;
 import br.com.codenation.gerenciador.service.DepartamentoService;
 import org.springframework.beans.factory.annotation.Autowired;

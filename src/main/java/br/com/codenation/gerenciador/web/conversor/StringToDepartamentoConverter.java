@@ -1,6 +1,6 @@
 package br.com.codenation.gerenciador.web.conversor;
 
-import br.com.codenation.gerenciador.domain.Departamento;
+import br.com.codenation.gerenciador.domain.mongo.Departamento;
 import br.com.codenation.gerenciador.service.DepartamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
@@ -13,11 +13,10 @@ public class StringToDepartamentoConverter implements Converter<String, Departam
 	private DepartamentoService service;
 
 	@Override
-	public Departamento convert(String text) {
-		if (text.isEmpty()) {
+	public Departamento convert(String id) {
+		if (id.isEmpty()) {
 			return null;
 		}
-		Long id = Long.valueOf(text);
 		return service.buscarPorId(id);
 	}
 

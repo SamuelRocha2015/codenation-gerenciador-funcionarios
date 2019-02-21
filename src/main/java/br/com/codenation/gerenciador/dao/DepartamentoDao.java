@@ -1,8 +1,8 @@
 package br.com.codenation.gerenciador.dao;
 
-import java.util.List;
+import br.com.codenation.gerenciador.domain.mongo.Departamento;
 
-import br.com.codenation.gerenciador.domain.Departamento;
+import java.util.List;
 
 public interface DepartamentoDao {
 
