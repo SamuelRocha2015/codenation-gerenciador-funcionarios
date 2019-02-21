@@ -1,8 +1,8 @@
 package br.com.codenation.gerenciador.service;
 
-import java.util.List;
+import br.com.codenation.gerenciador.domain.mongo.Cargo;
 
-import br.com.codenation.gerenciador.domain.Cargo;
+import java.util.List;
 
 public interface CargoService {
 
@@ -10,11 +10,11 @@ public interface CargoService {
 	
 	void editar(Cargo cargo);
 	
-	void excluir(Long id);
+	void excluir(String id);
 	
-	Cargo buscarPorId(Long id);
+	Cargo buscarPorId(String id);
 	
 	List<Cargo> buscarTodos();
 	
-	boolean cargoTemFuncionarios(Long id);
+	boolean cargoTemFuncionarios(String id);
 }

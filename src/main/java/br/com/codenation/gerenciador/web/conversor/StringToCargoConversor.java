@@ -1,6 +1,6 @@
 package br.com.codenation.gerenciador.web.conversor;
 
-import br.com.codenation.gerenciador.domain.Cargo;
+import br.com.codenation.gerenciador.domain.mongo.Cargo;
 import br.com.codenation.gerenciador.service.CargoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
@@ -13,11 +13,10 @@ public class StringToCargoConversor implements Converter<String, Cargo> {
 	private CargoService service;
 	
 	@Override
-	public Cargo convert(String text) {
-		if (text.isEmpty()) {
+	public Cargo convert(String id) {
+		if (id.isEmpty()) {
 			return null;
 		}
-		Long id = Long.valueOf(text);
 		return service.buscarPorId(id);
 	}
 }

@@ -4,6 +4,7 @@ import com.mongodb.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,9 @@ public class DemoMvcApplication {
 		SpringApplication.run(DemoMvcApplication.class, args);
 	}
 
+	/**
+	 * Config Server Cloud-MongoDB
+	 */
 	@Bean
 	public MongoClient mongoClient() {
 		List<ServerAddress> saList = new ArrayList<>();

@@ -1,13 +1,8 @@
 package br.com.codenation.gerenciador.web.controller;
 
-import java.time.LocalDate;
-import java.util.List;
-
-import javax.validation.Valid;
-
-import br.com.codenation.gerenciador.domain.Cargo;
 import br.com.codenation.gerenciador.domain.Funcionario;
 import br.com.codenation.gerenciador.domain.UF;
+import br.com.codenation.gerenciador.domain.mongo.Cargo;
 import br.com.codenation.gerenciador.service.CargoService;
 import br.com.codenation.gerenciador.service.FuncionarioService;
 import br.com.codenation.gerenciador.web.validator.FuncionarioValidator;
@@ -17,14 +12,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.validation.Valid;
+import java.time.LocalDate;
+import java.util.List;
 
 @Controller
 @RequestMapping("/funcionarios")

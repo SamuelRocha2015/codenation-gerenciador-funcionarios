@@ -1,4 +1,4 @@
-package br.com.codenation.gerenciador.dao.repositories;
+package br.com.codenation.gerenciador.repositories;
 
 import br.com.codenation.gerenciador.domain.Usuario;
 import org.springframework.data.mongodb.repository.MongoRepository;
