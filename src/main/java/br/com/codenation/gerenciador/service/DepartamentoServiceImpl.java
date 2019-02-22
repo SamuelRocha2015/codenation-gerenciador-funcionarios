@@ -11,47 +11,35 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@Service
 public class DepartamentoServiceImpl implements DepartamentoService {
-	
-	@Autowired
-	private DepartamentoRepository dao;
 
-	@Transactional(readOnly = false)
 	@Override
 	public Departamento salvar(Departamento departamento) {
-		departamento.setId(UUID.randomUUID().toString());
-		return dao.save(departamento);
+		return null;
 	}
 
-	@Transactional(readOnly = false)
 	@Override
 	public Departamento editar(Departamento departamento) {
-		return dao.save(departamento);
+		return null;
 	}
 
-	@Transactional(readOnly = false)
 	@Override
 	public void excluir(String id) {
-		dao.deleteById(id);
+
 	}
 
-	@Transactional(readOnly = true)
 	@Override
 	public Departamento buscarPorId(String id) {
-		Optional<Departamento> departamento = dao.findById(id);
-		return departamento.get();
+		return null;
 	}
 
-	@Transactional(readOnly = true)
 	@Override
 	public List<Departamento> buscarTodos() {
-		return dao.findAll();
+		return null;
 	}
 
 	@Override
 	public boolean departamentoTemCargos(String id) {
-		return !CollectionUtils.isEmpty(buscarPorId(id).getCargos());
+		return false;
 	}
-
 }

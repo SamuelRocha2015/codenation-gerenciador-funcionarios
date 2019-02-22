@@ -9,8 +9,6 @@ import java.util.List;
 @Document(collection = "gerenciador-departamento")
 public class Departamento extends AbstractEntity {
 
-	@NotBlank(message = "Informe um nome.")
-	@Size(min = 3, max = 60, message = "O nome do departamento deve ter entre {min} e {max} caracteres.")
 	private String nome;
 	private List<Cargo> cargos;
 

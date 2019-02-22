@@ -12,26 +12,16 @@ import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@Document(collection = "gerenciador-funcionario")
 public class Funcionario extends AbstractEntity {
 
-	@NotBlank
-	@Size(max = 255, min = 3)
 	private String nome;
 
-	@NotNull
-	@NumberFormat(style = NumberFormat.Style.CURRENCY, pattern = "#,##0.00")
 	private BigDecimal salario;
 
-	@NotNull
-	@PastOrPresent(message = "{PastOrPresent.funcionario.dataEntrada}")
-	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate dataEntrada;
 
-	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate dataSaida;
 
-	@Valid
 	private Endereco endereco;
 
 	private Cargo cargo;

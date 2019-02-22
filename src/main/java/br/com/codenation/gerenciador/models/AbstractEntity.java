@@ -6,7 +6,6 @@ import java.io.Serializable;
 
 public abstract class AbstractEntity implements Serializable {
 
-	@Id
 	private String id;
 
 	public String getId() {

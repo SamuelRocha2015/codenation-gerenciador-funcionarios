@@ -12,63 +12,45 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@Service
-@Transactional(readOnly = true)
 public class FuncionarioServiceImpl implements FuncionarioService {
-	
-	@Autowired
-	private FuncionarioRepository dao;
 
-	@Transactional(readOnly = false)
 	@Override
 	public Funcionario salvar(Funcionario funcionario) {
-		funcionario.setId(UUID.randomUUID().toString());
-		return dao.save(funcionario);
+		return null;
 	}
 
-	@Transactional(readOnly = false)
 	@Override
 	public Funcionario editar(Funcionario funcionario) {
-		return dao.save(funcionario);
+		return null;
 	}
 
-	@Transactional(readOnly = false)
 	@Override
 	public void excluir(String id) {
-		dao.deleteById (id);
+
 	}
 
 	@Override
 	public Funcionario buscarPorId(String id) {
-		Optional<Funcionario> func = dao.findById(id);
-		return func.get();
+		return null;
 	}
 
 	@Override
 	public List<Funcionario> buscarTodos() {
-		return dao.findAll();
+		return null;
 	}
 
 	@Override
 	public List<Funcionario> buscarPorNome(String nome) {
-		return dao.findByNome(nome);
+		return null;
 	}
 
 	@Override
 	public List<Funcionario> buscarPorCargo(String id) {
-		return dao.findByCargoId(id);
+		return null;
 	}
 
 	@Override
-    public List<Funcionario> buscarPorDatas(LocalDate entrada, LocalDate saida) {
-	    if (entrada != null && saida != null) {	    	
-            return dao.findByDataEntradaAndDataSaida(entrada, saida);
-        } else if (entrada != null) {        	
-	        return dao.findByDataEntrada(entrada);
-        } else if (saida != null) {        	
-	        return dao.findByDataSaida(saida);
-        } else {
-        	return new ArrayList<>();
-        }
-    }
+	public List<Funcionario> buscarPorDatas(LocalDate entrada, LocalDate saida) {
+		return null;
+	}
 }
