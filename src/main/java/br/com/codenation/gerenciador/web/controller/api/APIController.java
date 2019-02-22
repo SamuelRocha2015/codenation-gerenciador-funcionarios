@@ -6,7 +6,7 @@ public interface APIController<T> {
 
     List<T> buscaTodos();
     T  buscaPorId(String id);
-    void remove();
+    void remove(String id);
     T adiciona(T t);
     T atualiza(String id, T t);
 

@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface CargoService {
 
-	void salvar(Cargo cargo);
+	Cargo salvar(Cargo cargo);
 	
-	void editar(Cargo cargo);
+	Cargo editar(Cargo cargo);
 	
 	void excluir(String id);
 	

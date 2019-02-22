@@ -18,14 +18,14 @@ public class CargoServiceImpl implements CargoService {
 	private CargoRepository repository;
 
 	@Override
-	public void salvar(Cargo cargo) {
+	public Cargo salvar(Cargo cargo) {
 		cargo.setId(UUID.randomUUID().toString());
-		repository.save(cargo);
+		return repository.save(cargo);
 	}
 
 	@Override
-	public void editar(Cargo cargo) {
-		repository.save(cargo);
+	public Cargo editar(Cargo cargo) {
+		return repository.save(cargo);
 	}
 
 	@Override

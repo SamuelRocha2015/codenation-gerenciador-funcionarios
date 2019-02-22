@@ -21,15 +21,15 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 
 	@Transactional(readOnly = false)
 	@Override
-	public void salvar(Funcionario funcionario) {
+	public Funcionario salvar(Funcionario funcionario) {
 		funcionario.setId(UUID.randomUUID().toString());
-		dao.save(funcionario);
+		return dao.save(funcionario);
 	}
 
 	@Transactional(readOnly = false)
 	@Override
-	public void editar(Funcionario funcionario) {
-		dao.save(funcionario);
+	public Funcionario editar(Funcionario funcionario) {
+		return dao.save(funcionario);
 	}
 
 	@Transactional(readOnly = false)

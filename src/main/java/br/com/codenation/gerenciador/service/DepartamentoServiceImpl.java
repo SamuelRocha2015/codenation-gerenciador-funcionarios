@@ -19,15 +19,15 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 
 	@Transactional(readOnly = false)
 	@Override
-	public void salvar(Departamento departamento) {
+	public Departamento salvar(Departamento departamento) {
 		departamento.setId(UUID.randomUUID().toString());
-		dao.save(departamento);		
+		return dao.save(departamento);
 	}
 
 	@Transactional(readOnly = false)
 	@Override
-	public void editar(Departamento departamento) {
-		dao.save(departamento);
+	public Departamento editar(Departamento departamento) {
+		return dao.save(departamento);
 	}
 
 	@Transactional(readOnly = false)

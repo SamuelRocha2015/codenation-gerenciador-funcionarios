@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface DepartamentoService {
 
-    void salvar(Departamento departamento);
+    Departamento salvar(Departamento departamento);
 
-    void editar(Departamento departamento);
+    Departamento editar(Departamento departamento);
 
     void excluir(String id);
 
